@@ -16,13 +16,10 @@ var rotation_helper
 
 var MOUSE_SENSITIVITY = 0.05
 
-var hud
-
 
 func _ready():
 	camera = $Rotation_Helper/Camera
 	rotation_helper = $Rotation_Helper
-	hud = $HUD
 
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
@@ -67,7 +64,7 @@ func process_input(_delta):
 	# Capturing/Freeing the cursor
 	if Input.is_action_just_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		$HUD/Menu.popup()
+		$CanvasLayer/HUD/Menu.popup()
 		get_tree().paused = true
 	# ----------------------------------
 
