@@ -12,6 +12,6 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physics_process(delta):
+func _physics_process(_delta):
 	if Input.is_action_just_pressed("fullscreen"):
 		OS.window_fullscreen = !OS.window_fullscreen
