@@ -1,4 +1,4 @@
-extends Control
+extends Node
 
 
 # Declare member variables here. Examples:
@@ -12,14 +12,6 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
-
-func _on_Start_Button_pressed():
-# warning-ignore:return_value_discarded
-	get_tree().change_scene("res://Scenes/test.tscn")
-
-
-func _on_Quit_Button_pressed():
-	get_tree().quit()
+func _physics_process(delta):
+	if Input.is_action_just_pressed("fullscreen"):
+		OS.window_fullscreen = !OS.window_fullscreen

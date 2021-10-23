@@ -1,26 +1,28 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://default_theme.tres" type="Theme" id=2]
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+theme = ExtResource( 2 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 1024.0
-margin_bottom = 600.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-margin_right = 1024.0
-margin_bottom = 600.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -36,7 +38,7 @@ __meta__ = {
 }
 
 [node name="Start_Button" type="Button" parent="HBoxContainer/VBoxContainer"]
-margin_top = 278.0
+margin_top = 273.0
 margin_right = 41.0
 margin_bottom = 298.0
 text = "Start"
@@ -44,7 +46,7 @@ text = "Start"
 [node name="Quit_Button" type="Button" parent="HBoxContainer/VBoxContainer"]
 margin_top = 302.0
 margin_right = 41.0
-margin_bottom = 322.0
+margin_bottom = 327.0
 text = "Quit"
 
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/Start_Button" to="." method="_on_Start_Button_pressed"]
