@@ -19,6 +19,7 @@ func _ready():
 func _on_Resume_Button_pressed():
 	$Menu.hide()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	get_tree().paused = false
 
 
 func _on_Quit_Button_pressed():

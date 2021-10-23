@@ -66,12 +66,9 @@ func process_input(_delta):
 	# ----------------------------------
 	# Capturing/Freeing the cursor
 	if Input.is_action_just_pressed("ui_cancel"):
-		if Input.get_mouse_mode() == Input.MOUSE_MODE_VISIBLE:
-			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-			$HUD/Menu.hide()
-		else:
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-			$HUD/Menu.popup()
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		$HUD/Menu.popup()
+		get_tree().paused = true
 	# ----------------------------------
 
 
