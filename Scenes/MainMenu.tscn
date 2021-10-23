@@ -1,8 +1,11 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/MainMenu.gd" type="Script" id=1]
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -43,3 +46,6 @@ margin_top = 302.0
 margin_right = 41.0
 margin_bottom = 322.0
 text = "Quit"
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Start_Button" to="." method="_on_Start_Button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/Quit_Button" to="." method="_on_Quit_Button_pressed"]
