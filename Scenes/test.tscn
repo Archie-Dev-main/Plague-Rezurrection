@@ -1,14 +1,15 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://test_ball.phymat" type="PhysicsMaterial" id=2]
 [ext_resource path="res://Art/Models/cane.mesh" type="ArrayMesh" id=3]
 [ext_resource path="res://Art/Models/sword.mesh" type="ArrayMesh" id=4]
-[ext_resource path="res://Art/Materials/ebonyWood.material" type="Material" id=5]
+[ext_resource path="res://Art/Materials/ebony_wood.material" type="Material" id=5]
 [ext_resource path="res://Art/Materials/mahogany_wood.material" type="Material" id=6]
 [ext_resource path="res://Art/Materials/rusty_iron.material" type="Material" id=7]
 [ext_resource path="res://Art/Materials/metal.material" type="Material" id=8]
 [ext_resource path="res://Scenes/Zombie.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Art/Models/perk_lectern.tscn" type="PackedScene" id=10]
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 100, 100 )
@@ -80,3 +81,6 @@ material/2 = ExtResource( 6 )
 
 [node name="Zombie" parent="." instance=ExtResource( 9 )]
 transform = Transform( 1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 0, 0, -5.46135 )
+
+[node name="perk_lectern" parent="." instance=ExtResource( 10 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.44932, 0, -5.44981 )

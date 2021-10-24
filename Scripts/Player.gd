@@ -17,7 +17,7 @@ var rotation_helper
 var MOUSE_SENSITIVITY = 0.05
 
 var cur_melee_wep = 0
-var cur_ranged_wep = 1
+var cur_ranged_wep = 4
 
 var cur_wep
 
@@ -96,6 +96,8 @@ func process_input(_delta):
 			$AnimationPlayer.play("cane")
 		elif cur_wep == 1:
 			$AnimationPlayer.play("sword")
+		elif cur_wep == 2:
+			$AnimationPlayer.play("warhammer")
 	# ----------------------------------
 	
 	# ----------------------------------

@@ -1,9 +1,12 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/HUD.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Art/Models/cane.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Art/Models/sword.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Art/Models/warhammer.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Art/Models/bow.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Art/Models/crossbow.tscn" type="PackedScene" id=7]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.5
@@ -41,6 +44,21 @@ tracks/0/keys = {
 "values": [ Vector3( 0, 90, 45 ), Vector3( 0, 90, -90 ), Vector3( 0, 90, 45 ) ]
 }
 
+[sub_resource type="Animation" id=4]
+resource_name = "warhammer"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Rotation_Helper/Camera/Weapon_Point/warhammer:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 90, 0 ), Vector3( 0, 90, -90 ), Vector3( 0, 90, 0 ) ]
+}
+
 [node name="Player" type="KinematicBody"]
 script = ExtResource( 1 )
 
@@ -58,10 +76,24 @@ fov = 90.0
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, -0.2, -0.5 )
 
 [node name="cane" parent="Rotation_Helper/Camera/Weapon_Point" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.95 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.75 )
+visible = false
 
 [node name="sword" parent="Rotation_Helper/Camera/Weapon_Point" instance=ExtResource( 4 )]
 transform = Transform( -3.09086e-08, 3.09086e-08, 1, 0.707107, 0.707107, 0, -0.707107, 0.707107, -4.37114e-08, 0, 0, 0 )
+visible = false
+
+[node name="warhammer" parent="Rotation_Helper/Camera/Weapon_Point" instance=ExtResource( 5 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )
+visible = false
+
+[node name="bow" parent="Rotation_Helper/Camera/Weapon_Point" instance=ExtResource( 6 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -0.5 )
+visible = false
+
+[node name="crossbow" parent="Rotation_Helper/Camera/Weapon_Point" instance=ExtResource( 7 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -0.2, 0.5 )
+visible = false
 
 [node name="Cane_Cast" type="RayCast" parent="Rotation_Helper/Camera"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0 )
@@ -73,9 +105,25 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0 )
 enabled = true
 cast_to = Vector3( 0, 0, -1 )
 
+[node name="Warhammer_Cast" type="RayCast" parent="Rotation_Helper/Camera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0 )
+enabled = true
+cast_to = Vector3( 0, 0, -2 )
+
+[node name="Bow_Cast" type="RayCast" parent="Rotation_Helper/Camera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0 )
+enabled = true
+cast_to = Vector3( 0, 0, -20 )
+
+[node name="Crossbow_Cast" type="RayCast" parent="Rotation_Helper/Camera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2, 0 )
+enabled = true
+cast_to = Vector3( 0, 0, -40 )
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/cane = SubResource( 2 )
 anims/sword = SubResource( 3 )
+anims/warhammer = SubResource( 4 )
 
 [node name="Feet" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, 0 )
