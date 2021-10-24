@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/CathedralTiles.png-76f9eef8c08e5bcfe7b2b3b2fb2fc1d4.s3tc.stex"
-path.etc2="res://.import/CathedralTiles.png-76f9eef8c08e5bcfe7b2b3b2fb2fc1d4.etc2.stex"
+path.s3tc="res://.import/zombieFaceSkinned.png-b1570c213d35c44cf6f63f68c66b17a8.s3tc.stex"
+path.etc2="res://.import/zombieFaceSkinned.png-b1570c213d35c44cf6f63f68c66b17a8.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Art/Textures/CathedralTiles.png"
-dest_files=[ "res://.import/CathedralTiles.png-76f9eef8c08e5bcfe7b2b3b2fb2fc1d4.s3tc.stex", "res://.import/CathedralTiles.png-76f9eef8c08e5bcfe7b2b3b2fb2fc1d4.etc2.stex" ]
+source_file="res://Art/Textures/zombieFaceSkinned.png"
+dest_files=[ "res://.import/zombieFaceSkinned.png-b1570c213d35c44cf6f63f68c66b17a8.s3tc.stex", "res://.import/zombieFaceSkinned.png-b1570c213d35c44cf6f63f68c66b17a8.etc2.stex" ]
 
 [params]
 
