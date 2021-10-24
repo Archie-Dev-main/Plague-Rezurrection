@@ -9,6 +9,7 @@ size = Vector3( 500, 0.1, 500 )
 
 [sub_resource type="SpatialMaterial" id=2]
 albedo_texture = ExtResource( 3 )
+uv1_scale = Vector3( 0.1, 0.1, 0.1 )
 uv1_triplanar = true
 
 [sub_resource type="ConcavePolygonShape" id=3]
