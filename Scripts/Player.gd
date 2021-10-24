@@ -27,6 +27,8 @@ var cur_dam = damage_arr[cur_wep]
 
 onready var weapons = $Rotation_Helper/Camera/Weapon_Point.get_children()
 
+var attack_ready = true
+
 var health = 100
 
 
@@ -103,6 +105,7 @@ func process_input(_delta):
 			cur_wep = cur_ranged_wep
 		else:
 			cur_wep = cur_melee_wep
+		cur_dam = damage_arr[cur_wep]
 		
 		display_current_weapon(cur_wep)
 	# ----------------------------------
@@ -113,28 +116,38 @@ func process_input(_delta):
 		if cur_wep == 0:
 			$AnimationPlayer.play("cane")
 			if ($Rotation_Helper/Camera/Cane_Cast.is_colliding() && 
-			$Rotation_Helper/Camera/Cane_Cast.get_collider().is_in_group("Zombies")):
+			$Rotation_Helper/Camera/Cane_Cast.get_collider().is_in_group("Zombies")
+			&& attack_ready):
 				do_damage($Rotation_Helper/Camera/Cane_Cast.get_collider())
+				attack_ready = false
 		elif cur_wep == 1:
 			$AnimationPlayer.play("sword")
 			if ($Rotation_Helper/Camera/Sword_Cast.is_colliding() && 
-			$Rotation_Helper/Camera/Sword_Cast.get_collider().is_in_group("Zombies")):
+			$Rotation_Helper/Camera/Sword_Cast.get_collider().is_in_group("Zombies")
+			&& attack_ready):
 				do_damage($Rotation_Helper/Camera/Sword_Cast.get_collider())
+				attack_ready = false
 		elif cur_wep == 2:
 			$AnimationPlayer.play("warhammer")
 			if ($Rotation_Helper/Camera/Warhammer_Cast.is_colliding() && 
-			$Rotation_Helper/Camera/Warhammer_Cast.get_collider().is_in_group("Zombies")):
+			$Rotation_Helper/Camera/Warhammer_Cast.get_collider().is_in_group("Zombies")
+			&& attack_ready):
 				do_damage($Rotation_Helper/Camera/Warhammer_Cast.get_collider())
+				attack_ready = false
 		elif cur_wep == 3:
 			$AnimationPlayer.play("bow")
 			if ($Rotation_Helper/Camera/Bow_Cast.is_colliding() && 
-			$Rotation_Helper/Camera/Bow_Cast.get_collider().is_in_group("Zombies")):
+			$Rotation_Helper/Camera/Bow_Cast.get_collider().is_in_group("Zombies")
+			&& attack_ready):
 				do_damage($Rotation_Helper/Camera/Bow_Cast.get_collider())
+				attack_ready = false
 		elif cur_wep == 4:
 			$AnimationPlayer.play("crossbow")
 			if ($Rotation_Helper/Camera/Crossbow_Cast.is_colliding() && 
-			$Rotation_Helper/Camera/Crossbow_Cast.get_collider().is_in_group("Zombies")):
+			$Rotation_Helper/Camera/Crossbow_Cast.get_collider().is_in_group("Zombies")
+			&& attack_ready):
 				do_damage($Rotation_Helper/Camera/Crossbow_Cast.get_collider())
+				attack_ready = false
 	# ----------------------------------
 	
 	# ----------------------------------
@@ -178,3 +191,7 @@ func _input(event):
 		var camera_rot = rotation_helper.rotation_degrees
 		camera_rot.x = clamp(camera_rot.x, -70, 70)
 		rotation_helper.rotation_degrees = camera_rot
+
+
+func _on_AnimationPlayer_animation_finished(_anim_name):
+	attack_ready = true

@@ -50,9 +50,10 @@ material/0 = ExtResource( 3 )
 shape = SubResource( 3 )
 
 [node name="Spawn_Point" type="Spatial" parent="Navigation"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.79558, -65.6323 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.27121, -65.6323 )
 
 [node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
 autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

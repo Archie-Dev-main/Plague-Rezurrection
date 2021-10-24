@@ -3,7 +3,7 @@ extends KinematicBody
 var path = []
 var path_node = 0
 
-var speed = 1
+var speed = 5
 
 var player = null
 
