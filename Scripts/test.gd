@@ -8,7 +8,7 @@ extends Spatial
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Zombie.set_player($Player)
+	$Navigation/Zombie.set_player($Player)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

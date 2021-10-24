@@ -1,7 +1,15 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://default_theme.tres" type="Theme" id=1]
 [ext_resource path="res://Scripts/HUD.gd" type="Script" id=2]
+[ext_resource path="res://Font/times.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 3 )
 
 [node name="HUD" type="Control"]
 pause_mode = 2
@@ -58,7 +66,7 @@ margin_right = 63.0
 margin_bottom = 327.0
 text = "Quit"
 
-[node name="Label" type="Label" parent="."]
+[node name="Crosshair" type="Label" parent="."]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -69,6 +77,17 @@ margin_right = 20.0
 margin_bottom = 9.5
 text = "+"
 align = 1
+
+[node name="Health" type="Label" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -36.0
+custom_fonts/font = SubResource( 1 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="pressed" from="Menu/HBoxContainer/VBoxContainer/Resume_Button" to="." method="_on_Resume_Button_pressed"]
 [connection signal="pressed" from="Menu/HBoxContainer/VBoxContainer/Quit_Button" to="." method="_on_Quit_Button_pressed"]

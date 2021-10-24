@@ -12,8 +12,8 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _physics_process(_delta):
+	$Health.text = str(get_parent().get_parent().health)
 
 
 func _on_Resume_Button_pressed():

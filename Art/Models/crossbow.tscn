@@ -62,12 +62,12 @@ surfaces/1 = {
 [node name="crossbow" type="Spatial"]
 
 [node name="crossbow" type="MeshInstance" parent="."]
+visible = false
 mesh = SubResource( 1 )
 material/0 = ExtResource( 3 )
 material/1 = ExtResource( 4 )
 
 [node name="crossbow_drawn" type="MeshInstance" parent="."]
-visible = false
 mesh = SubResource( 2 )
-material/0 = null
-material/1 = null
+material/0 = ExtResource( 3 )
+material/1 = ExtResource( 4 )
