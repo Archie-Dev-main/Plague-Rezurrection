@@ -1,4 +1,6 @@
-[gd_scene load_steps=49 format=2]
+[gd_scene load_steps=50 format=2]
+
+[ext_resource path="res://Art/Materials/zombie_skin.material" type="Material" id=1]
 
 [sub_resource type="SpatialMaterial" id=1]
 vertex_color_use_as_albedo = true
@@ -427,117 +429,117 @@ extents = Vector3( 0.2, 0.1, 0.2 )
 [node name="Torso" type="MeshInstance" parent="zombie_model"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.771564, 0 )
 mesh = SubResource( 2 )
-material/0 = null
+material/0 = ExtResource( 1 )
 
 [node name="L_Hip" type="MeshInstance" parent="zombie_model/Torso"]
 transform = Transform( 1, 0, 0, 0, 0.934745, 0.355319, 0, -0.355319, 0.934745, 0.0518307, -0.245489, -0.00406933 )
 mesh = SubResource( 4 )
-material/0 = null
+material/0 = ExtResource( 1 )
 
 [node name="L_Thigh" type="MeshInstance" parent="zombie_model/Torso/L_Hip"]
 transform = Transform( 1, -0.000362121, 0, 0.000362121, 1, 0, 0, 0, 1, 0.00957154, -0.165218, 0.00374531 )
 mesh = SubResource( 6 )
-material/0 = null
+material/0 = ExtResource( 1 )
 
 [node name="L_Knee" type="MeshInstance" parent="zombie_model/Torso/L_Hip/L_Thigh"]
 transform = Transform( 1, 0.000362121, 0, -0.000362121, 1, 0, 0, 0, 1, 0.000145301, -0.137548, 0.00473264 )
 mesh = SubResource( 8 )
-material/0 = null
+material/0 = ExtResource( 1 )
 
 [node name="L_Calf" type="MeshInstance" parent="zombie_model/Torso/L_Hip/L_Thigh/L_Knee"]
 transform = Transform( 1, -0.000362121, 0, 0.000362121, 1, 0, 0, 0, 1, 0.00468821, -0.124524, -0.00473267 )
 mesh = SubResource( 10 )
-material/0 = null
+material/0 = ExtResource( 1 )
 
 [node name="L_Foot" type="MeshInstance" parent="zombie_model/Torso/L_Hip/L_Thigh/L_Knee/L_Calf"]
 transform = Transform( 1, 0.000362121, 0, -0.000362121, 1, 0, 0, 0, 1, 0.000422783, -0.0839998, 0.029624 )
 mesh = SubResource( 12 )
-material/0 = null
+material/0 = ExtResource( 1 )
 
 [node name="L_Shoulder" type="MeshInstance" parent="zombie_model/Torso"]
 transform = Transform( 0.997044, -0.076837, 0, 0.00903788, 0.117276, 0.993058, -0.0763036, -0.990123, 0.117624, 0.132839, 0.0446736, -0.00711018 )
 mesh = SubResource( 14 )
-material/0 = null
+material/0 = ExtResource( 1 )
 
 [node name="L_Bicept" type="MeshInstance" parent="zombie_model/Torso/L_Shoulder"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0127461, -0.0766641, 0.0067862 )
 mesh = SubResource( 16 )
-material/0 = null
+material/0 = ExtResource( 1 )
 
 [node name="L_Elbow" type="MeshInstance" parent="zombie_model/Torso/L_Shoulder/L_Bicept"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000920549, -0.0709045, 0.000282753 )
 mesh = SubResource( 18 )
-material/0 = null
+material/0 = ExtResource( 1 )
 
 [node name="L_Forearm" type="MeshInstance" parent="zombie_model/Torso/L_Shoulder/L_Bicept/L_Elbow"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000463754, -0.0854722, -0.000282772 )
 mesh = SubResource( 20 )
-material/0 = null
+material/0 = ExtResource( 1 )
 
 [node name="L_Hand" type="MeshInstance" parent="zombie_model/Torso/L_Shoulder/L_Bicept/L_Elbow/L_Forearm"]
 transform = Transform( 0.999212, 0.0396885, 0, -0.0396885, 0.999212, 0, 0, 0, 1, -0.000519648, -0.085905, 0.000324066 )
 mesh = SubResource( 22 )
-material/0 = null
+material/0 = ExtResource( 1 )
 
 [node name="Neck" type="MeshInstance" parent="zombie_model/Torso"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00331132, 0.087424, -0.0102049 )
 mesh = SubResource( 24 )
-material/0 = null
+material/0 = ExtResource( 1 )
 
 [node name="Head" type="MeshInstance" parent="zombie_model/Torso/Neck"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00331132, 0.107534, 0.0102049 )
 mesh = SubResource( 26 )
-material/0 = null
+material/0 = ExtResource( 1 )
 
 [node name="R_Hip" type="MeshInstance" parent="zombie_model/Torso"]
 transform = Transform( 1, 0, 0, 0, 0.934379, -0.356281, 0, 0.356281, 0.934379, -0.0518307, -0.245489, -0.00406933 )
 mesh = SubResource( 28 )
-material/0 = null
+material/0 = ExtResource( 1 )
 
 [node name="R_Thigh" type="MeshInstance" parent="zombie_model/Torso/R_Hip"]
 transform = Transform( 1, -0.000362121, 0, 0.000362121, 1, 0, 0, 0, 1, -0.00957155, -0.165218, 0.00374531 )
 mesh = SubResource( 30 )
-material/0 = null
+material/0 = ExtResource( 1 )
 
 [node name="R_Knee" type="MeshInstance" parent="zombie_model/Torso/R_Hip/R_Thigh"]
 transform = Transform( 1, 0.000362121, 0, -0.000362121, 1, 0, 0, 0, 1, -0.000244904, -0.137548, 0.00473264 )
 mesh = SubResource( 32 )
-material/0 = null
+material/0 = ExtResource( 1 )
 
 [node name="R_Calf" type="MeshInstance" parent="zombie_model/Torso/R_Hip/R_Thigh/R_Knee"]
 transform = Transform( 1, -0.000362121, 0, 0.000362121, 1, 0, 0, 0, 1, -0.0046882, -0.124524, -0.00473268 )
 mesh = SubResource( 34 )
-material/0 = null
+material/0 = ExtResource( 1 )
 
 [node name="R_Foot" type="MeshInstance" parent="zombie_model/Torso/R_Hip/R_Thigh/R_Knee/R_Calf"]
 transform = Transform( 1, 0.000362121, 0, -0.000362121, 1, 0, 0, 0, 1, -0.000481904, -0.0792789, 0.029624 )
 mesh = SubResource( 36 )
-material/0 = null
+material/0 = ExtResource( 1 )
 
 [node name="R_Shoulder" type="MeshInstance" parent="zombie_model/Torso"]
 transform = Transform( 0.997044, -0.076837, 0, -0.00656986, -0.0852511, 0.996338, -0.0765556, -0.993393, -0.0855038, -0.132839, 0.0446736, -0.00711018 )
 mesh = SubResource( 38 )
-material/0 = null
+material/0 = ExtResource( 1 )
 
 [node name="R_Bicept" type="MeshInstance" parent="zombie_model/Torso/R_Shoulder"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0243421, -0.073806, 0.0067862 )
 mesh = SubResource( 40 )
-material/0 = null
+material/0 = ExtResource( 1 )
 
 [node name="R_Elbow" type="MeshInstance" parent="zombie_model/Torso/R_Shoulder/R_Bicept"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0117736, -0.0699262, 0.000282754 )
 mesh = SubResource( 42 )
-material/0 = null
+material/0 = ExtResource( 1 )
 
 [node name="R_Forearm" type="MeshInstance" parent="zombie_model/Torso/R_Shoulder/R_Bicept/R_Elbow"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0135544, -0.084392, -0.000282773 )
 mesh = SubResource( 44 )
-material/0 = null
+material/0 = ExtResource( 1 )
 
 [node name="R_Hand" type="MeshInstance" parent="zombie_model/Torso/R_Shoulder/R_Bicept/R_Elbow/R_Forearm"]
 transform = Transform( 0.999212, 0.0396885, 0, -0.0396885, 0.999212, 0, 0, 0, 1, -0.0126488, -0.0849703, 0.000324064 )
 mesh = SubResource( 46 )
-material/0 = null
+material/0 = ExtResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.525, 0 )
