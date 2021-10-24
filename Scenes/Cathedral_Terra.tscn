@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Art/Models/cathedral.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Art/Materials/grass.material" type="Material" id=3]
+
+[sub_resource type="NavigationMesh" id=4]
 
 [sub_resource type="CubeMesh" id=1]
 size = Vector3( 500, 0.1, 500 )
@@ -11,18 +13,6 @@ size = Vector3( 500, 0.1, 500 )
 data = PoolVector3Array( -250, 0.05, 250, 250, 0.05, 250, -250, -0.05, 250, 250, 0.05, 250, 250, -0.05, 250, -250, -0.05, 250, 250, 0.05, -250, -250, 0.05, -250, 250, -0.05, -250, -250, 0.05, -250, -250, -0.05, -250, 250, -0.05, -250, 250, 0.05, 250, 250, 0.05, -250, 250, -0.05, 250, 250, 0.05, -250, 250, -0.05, -250, 250, -0.05, 250, -250, 0.05, -250, -250, 0.05, 250, -250, -0.05, -250, -250, 0.05, 250, -250, -0.05, 250, -250, -0.05, -250, 250, 0.05, 250, -250, 0.05, 250, 250, 0.05, -250, -250, 0.05, 250, -250, 0.05, -250, 250, 0.05, -250, -250, -0.05, 250, 250, -0.05, 250, -250, -0.05, -250, 250, -0.05, 250, 250, -0.05, -250, -250, -0.05, -250 )
 
 [node name="Cathedral" type="Spatial"]
-
-[node name="cathedral" parent="." instance=ExtResource( 1 )]
-
-[node name="Floor" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06, 0 )
-mesh = SubResource( 1 )
-material/0 = ExtResource( 3 )
-
-[node name="StaticBody" type="StaticBody" parent="Floor"]
-
-[node name="CollisionShape" type="CollisionShape" parent="Floor/StaticBody"]
-shape = SubResource( 3 )
 
 [node name="Small_Light" type="OmniLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.9, 0 )
@@ -34,3 +24,20 @@ omni_range = 50.0
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0 )
+
+[node name="Navigation" type="Navigation" parent="."]
+
+[node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="Navigation"]
+navmesh = SubResource( 4 )
+
+[node name="cathedral" parent="Navigation/NavigationMeshInstance" instance=ExtResource( 1 )]
+
+[node name="Floor" type="MeshInstance" parent="Navigation/NavigationMeshInstance"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06, 0 )
+mesh = SubResource( 1 )
+material/0 = ExtResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="Navigation/NavigationMeshInstance/Floor"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Floor/StaticBody"]
+shape = SubResource( 3 )
