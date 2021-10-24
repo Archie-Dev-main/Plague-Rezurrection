@@ -18,7 +18,7 @@ func _ready():
 
 func _on_Start_Button_pressed():
 # warning-ignore:return_value_discarded
-	get_tree().change_scene("res://Scenes/test.tscn")
+	get_tree().change_scene("res://Scenes/Cathedral_Terra.tscn")
 
 
 func _on_Quit_Button_pressed():
