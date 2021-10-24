@@ -16,12 +16,30 @@ var rotation_helper
 
 var MOUSE_SENSITIVITY = 0.05
 
+var cur_melee_wep = 0
+var cur_ranged_wep = 1
+
+var cur_wep
+
+onready var weapons = $Rotation_Helper/Camera/Weapon_Point.get_children()
+
+
+func display_current_weapon(wep):
+	var temp = weapons[wep]
+	temp.show()
+	for i in weapons:
+		if i != temp:
+			i.hide()
+
 
 func _ready():
 	camera = $Rotation_Helper/Camera
 	rotation_helper = $Rotation_Helper
 
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
+	cur_wep = cur_melee_wep
+	display_current_weapon(cur_wep)
 
 
 func _physics_process(delta):
@@ -58,6 +76,26 @@ func process_input(_delta):
 	if is_on_floor():
 		if Input.is_action_just_pressed("movement_jump"):
 			vel.y = JUMP_SPEED
+	# ----------------------------------
+	
+	# ----------------------------------
+	# Switch Weapon
+	if Input.is_action_just_pressed("combat_switch"):
+		if cur_wep == cur_melee_wep:
+			cur_wep = cur_ranged_wep
+		else:
+			cur_wep = cur_melee_wep
+		
+		display_current_weapon(cur_wep)
+	# ----------------------------------
+	
+	# ----------------------------------
+	# Attack
+	if Input.is_action_just_pressed("combat_attack"):
+		if cur_wep == 0:
+			$AnimationPlayer.play("cane")
+		elif cur_wep == 1:
+			$AnimationPlayer.play("sword")
 	# ----------------------------------
 	
 	# ----------------------------------

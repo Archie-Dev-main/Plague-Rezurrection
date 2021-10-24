@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://test_ball.phymat" type="PhysicsMaterial" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Art/Materials/mahogany_wood.material" type="Material" id=6]
 [ext_resource path="res://Art/Materials/rusty_iron.material" type="Material" id=7]
 [ext_resource path="res://Art/Materials/metal.material" type="Material" id=8]
+[ext_resource path="res://Scenes/Zombie.tscn" type="PackedScene" id=9]
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 100, 100 )
@@ -38,6 +39,7 @@ shape = SubResource( 2 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 10, 0 )
+shadow_enabled = true
 
 [node name="Ball" type="RigidBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.76908, 6.99008, -36.203 )
@@ -75,3 +77,6 @@ mesh = ExtResource( 4 )
 material/0 = ExtResource( 7 )
 material/1 = ExtResource( 8 )
 material/2 = ExtResource( 6 )
+
+[node name="Zombie" parent="." instance=ExtResource( 9 )]
+transform = Transform( 1.75, 0, 0, 0, 1.75, 0, 0, 0, 1.75, 0, 0, -5.46135 )
