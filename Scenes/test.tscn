@@ -44,7 +44,7 @@ transform = Transform( 1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0
 shadow_enabled = true
 
 [node name="Ball" type="RigidBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.76908, 6.99008, -36.203 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30.9646, 6.60127, -18.7993 )
 physics_material_override = ExtResource( 2 )
 
 [node name="Sphere" type="MeshInstance" parent="Ball"]
@@ -55,10 +55,10 @@ material/0 = null
 shape = SubResource( 4 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0 )
+transform = Transform( -0.768552, 0, 0.639788, 0, 1, 0, -0.639788, 0, -0.768552, 0, 5, 0 )
 
 [node name="Cane_Phys" type="RigidBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.88924, -10.3655 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -36.0417, 8.1339, -17.1859 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Cane_Phys"]
 shape = SubResource( 5 )
@@ -69,7 +69,7 @@ material/0 = ExtResource( 5 )
 material/1 = ExtResource( 8 )
 
 [node name="Sword_Phys" type="RigidBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.28949, 5.44537, -11.8274 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.8875, 11.3439, -13.7213 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Sword_Phys"]
 shape = SubResource( 6 )
@@ -88,3 +88,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.44932, 0, -5.44981 )
 
 [node name="cathedral" parent="." instance=ExtResource( 11 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.4633, 0.522588, 22.4118 )
+
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -31.3545, 3.37135, 33.0341 )

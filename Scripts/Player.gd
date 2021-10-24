@@ -17,7 +17,7 @@ var rotation_helper
 var MOUSE_SENSITIVITY = 0.05
 
 var cur_melee_wep = 0
-var cur_ranged_wep = 3
+var cur_ranged_wep = 4
 
 var cur_wep
 

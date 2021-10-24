@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Art/Materials/cathedral_stone.material" type="Material" id=1]
 [ext_resource path="res://Art/Models/Import/Stone.material" type="Material" id=2]
 [ext_resource path="res://Art/Models/Import/Door.material" type="Material" id=3]
 [ext_resource path="res://Art/Models/Import/Floor.material" type="Material" id=4]
+[ext_resource path="res://Art/Materials/door.material" type="Material" id=5]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "cathedral"
@@ -53,7 +54,7 @@ data = PoolVector3Array( -1, 0, -0.6001, 0, 1, -1, -1, 0, -1, -1, 0, -0.6001, 0,
 transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 25, 0, 10, -45 )
 mesh = SubResource( 1 )
 material/0 = ExtResource( 1 )
-material/1 = null
+material/1 = ExtResource( 5 )
 material/2 = null
 
 [node name="StaticBody" type="StaticBody" parent="cathedral"]
