@@ -270,6 +270,7 @@ material/1 = ExtResource( 9 )
 
 [node name="crossbow" type="Spatial" parent="Rotation_Helper/Camera/Weapon_Point"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, -1, 0, -0.229, 0.666 )
+visible = false
 
 [node name="crossbow" type="MeshInstance" parent="Rotation_Helper/Camera/Weapon_Point/crossbow"]
 visible = false
